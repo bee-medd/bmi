@@ -42,7 +42,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="20dp"
-        android:layout_marginTop="-30dp">
+        android:layout_marginTop="-30dp"
+        android:gravity="center_vertical">
 
         <!-- Primary Status Widget -->
         <com.google.android.material.card.MaterialCardView
@@ -50,7 +51,7 @@
             style="@style/EnterpriseCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -80,12 +81,11 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Stats & Quick Action Row -->
+        <!-- KPI Metrics Grid -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:baselineAligned="false"
             android:layout_marginBottom="24dp">
 
             <com.google.android.material.card.MaterialCardView
@@ -93,17 +93,81 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="20dp">
+                    android:padding="16dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Total Tasks"
+                        android:text="OEE Rate"
+                        android:textColor="@color/text_muted"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="94.2%"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brand_success" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/EnterpriseCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Downtime"
+                        android:textColor="@color/text_muted"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2.1%"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brand_danger" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Tasks Stats -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/EnterpriseCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cycle Operations"
                         android:textColor="@color/text_muted"
                         android:textSize="13sp" />
                     <TextView
@@ -115,17 +179,17 @@
                         android:textStyle="bold"
                         android:textColor="@color/brand_primary" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
 
-            <Button
-                android:id="@+id/btnRefresh"
-                style="@style/EnterpriseButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sync"
-                android:backgroundTint="@color/brand_primary"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnRefresh"
+                    style="@style/EnterpriseButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sync"
+                    android:backgroundTint="@color/brand_primary"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Primary Actions Section -->
         <TextView
@@ -155,6 +219,17 @@
             android:text="Submit Warehouse Request"
             android:backgroundTint="@color/brand_success"
             android:textColor="#FFFFFF" />
+
+        <!-- Footer Version -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PlantFloor OS v1.0.2 Enterprise Edition"
+            android:layout_marginTop="32dp"
+            android:textColor="@color/text_muted"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:layout_gravity="center" />
 
     </LinearLayout>
 </LinearLayout>

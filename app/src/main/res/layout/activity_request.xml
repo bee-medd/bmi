@@ -103,6 +103,15 @@
                         android:padding="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Processing Indicator (Hidden by default) -->
+                <ProgressBar
+                    android:id="@+id/pbSubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginBottom="12dp" />
+
                 <Button
                     android:id="@+id/btnSubmit"
                     style="@style/EnterpriseButton"
