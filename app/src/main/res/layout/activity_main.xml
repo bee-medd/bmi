@@ -1,235 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/bg_app">
+    android:background="@color/md3_background">
 
-    <!-- Minimalist Enterprise Header -->
-    <LinearLayout
+    <!-- MD3 Top App Bar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/brand_primary"
-        android:orientation="vertical"
-        android:padding="32dp"
-        android:paddingBottom="60dp"
-        android:gravity="start">
+        android:background="@color/md3_surface"
+        app:title="PlantFloor OS"
+        app:titleTextColor="@color/md3_on_surface"
+        app:titleCentered="false"
+        android:padding="16dp" />
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PlantFloor OS"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:letterSpacing="0.02" />
-
-        <TextView
-            android:id="@+id/tvDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-- : --"
-            android:textSize="14sp"
-            android:textColor="#CBD5E1"
-            android:layout_marginTop="4dp" />
-    </LinearLayout>
-
-    <!-- Content Area -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:layout_marginTop="-30dp"
-        android:gravity="top">
+        android:layout_below="@id/toolbar">
 
-        <!-- Primary Status Widget -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardStatus"
-            style="@style/EnterpriseCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="24dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OPERATIONAL STATUS"
-                    android:textColor="@color/text_muted"
-                    android:textSize="11sp"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.1" />
-
-                <TextView
-                    android:id="@+id/tvStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Standby"
-                    android:textColor="@color/brand_primary"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="4dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- KPI Metrics Grid -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp">
+            android:orientation="vertical"
+            android:padding="20dp">
 
+            <!-- Status Glance Section -->
             <com.google.android.material.card.MaterialCardView
-                style="@style/EnterpriseCard"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="OEE Rate"
-                        android:textColor="@color/text_muted"
-                        android:textSize="12sp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="94.2%"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/brand_success" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                style="@style/EnterpriseCard"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Downtime"
-                        android:textColor="@color/text_muted"
-                        android:textSize="12sp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2.1%"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/brand_danger" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
-
-        <!-- Tasks Stats -->
-        <com.google.android.material.card.MaterialCardView
-            style="@style/EnterpriseCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp">
-
-            <LinearLayout
+                android:id="@+id/cardStatus"
+                style="@style/MD3Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="20dp"
-                android:gravity="center_vertical">
+                app:cardBackgroundColor="@color/md3_primary_container"
+                android:layout_marginBottom="20dp">
 
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="24dp"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="System Status"
+                            android:textColor="@color/md3_on_primary_container"
+                            android:textSize="14sp"
+                            android:alpha="0.8" />
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Standby"
+                            android:textColor="@color/md3_on_primary_container"
+                            android:textSize="32sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- : --"
+                        android:textColor="@color/md3_on_primary_container"
+                        android:textSize="14sp"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- KPI Grid -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="1"
+                android:layout_marginBottom="24dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/MD3Card"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cycle Operations"
-                        android:textColor="@color/text_muted"
-                        android:textSize="13sp" />
-                    <TextView
-                        android:id="@+id/tvCounter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/brand_primary" />
-                </LinearLayout>
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="OEE Rate"
+                            android:textColor="@color/md3_on_surface_variant"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="94.2%"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/status_success" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                <Button
-                    android:id="@+id/btnRefresh"
-                    style="@style/EnterpriseButton"
-                    android:layout_width="wrap_content"
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/MD3Card"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Sync"
-                    android:backgroundTint="@color/brand_primary"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Downtime"
+                            android:textColor="@color/md3_on_surface_variant"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2.1%"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/status_danger" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
 
-        <!-- Primary Actions Section -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Management Actions"
-            android:textColor="@color/text_main"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            <!-- Operations Card -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/MD3Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cycle Operations"
+                            android:textColor="@color/md3_on_surface_variant"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/tvCounter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/md3_primary" />
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/btnRefresh"
+                        style="@style/MD3TonalButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sync" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-        <Button
-            android:id="@+id/btnAction"
-            style="@style/EnterpriseButton"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:text="Execute Production Cycle"
-            android:backgroundTint="@color/brand_accent"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="12dp" />
+            <!-- Actions Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quick Actions"
+                android:textColor="@color/md3_on_surface"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
 
-        <Button
-            android:id="@+id/btnRequest"
-            style="@style/EnterpriseButton"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:text="Submit Warehouse Request"
-            android:backgroundTint="@color/brand_success"
-            android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/btnAction"
+                style="@style/MD3Button"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Execute Production Cycle"
+                android:backgroundTint="@color/md3_primary"
+                android:textColor="@color/md3_on_primary"
+                android:layout_marginBottom="12dp" />
 
-        <!-- Footer Version -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PlantFloor OS v1.0.2 Enterprise Edition"
-            android:layout_marginTop="32dp"
-            android:textColor="@color/text_muted"
-            android:textSize="10sp"
-            android:gravity="center"
-            android:layout_gravity="center" />
+            <Button
+                android:id="@+id/btnRequest"
+                style="@style/MD3Button"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Submit Warehouse Request"
+                android:backgroundTint="@color/status_success"
+                android:textColor="#FFFFFF" />
 
-    </LinearLayout>
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PlantFloor OS v1.0.2 Enterprise Edition"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/md3_on_surface_variant"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
