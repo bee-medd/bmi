@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        tvTitle = findViewById(R.id.tvTitle);
         tvDate = findViewById(R.id.tvDate);
         tvStatus = findViewById(R.id.tvStatus);
         tvCounter = findViewById(R.id.tvCounter);
