@@ -4,56 +4,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_main">
+    android:background="@color/bg_app">
 
-    <!-- Professional Header Section -->
+    <!-- Minimalist Enterprise Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary"
+        android:background="@color/brand_primary"
         android:orientation="vertical"
         android:padding="32dp"
-        android:paddingBottom="48dp"
-        android:gravity="center">
+        android:paddingBottom="60dp"
+        android:gravity="start">
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Industrial Dashboard"
-            android:textSize="26sp"
+            android:text="PlantFloor OS"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/text_on_primary"
-            android:letterSpacing="0.01" />
+            android:textColor="#FFFFFF"
+            android:letterSpacing="0.02" />
 
         <TextView
             android:id="@+id/tvDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="--"
+            android:text="-- : --"
             android:textSize="14sp"
-            android:textColor="@color/text_on_primary"
-            android:alpha="0.7"
-            android:layout_marginTop="8dp" />
+            android:textColor="#CBD5E1"
+            android:layout_marginTop="4dp" />
     </LinearLayout>
 
-    <!-- Main Content Area (shifted up to overlap header slightly) -->
+    <!-- Content Area -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:layout_marginTop="-24dp">
+        android:padding="20dp"
+        android:layout_marginTop="-30dp">
 
-        <!-- Status Card -->
+        <!-- Primary Status Widget -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardStatus"
+            style="@style/EnterpriseCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@color/bg_surface"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,9 +62,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SYSTEM STATUS"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
+                    android:text="OPERATIONAL STATUS"
+                    android:textColor="@color/text_muted"
+                    android:textSize="11sp"
                     android:textStyle="bold"
                     android:letterSpacing="0.1" />
 
@@ -76,89 +73,88 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Standby"
-                    android:textColor="@color/primary"
-                    android:textSize="32sp"
+                    android:textColor="@color/brand_primary"
+                    android:textSize="36sp"
                     android:textStyle="bold"
                     android:layout_marginTop="4dp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Action Stats Card -->
-        <com.google.android.material.card.MaterialCardView
+        <!-- Stats & Quick Action Row -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/bg_surface"
-            android:layout_marginBottom="32dp">
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:layout_marginBottom="24dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <com.google.android.material.card.MaterialCardView
+                style="@style/EnterpriseCard"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="24dp"
-                android:gravity="center_vertical">
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="20dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Operations"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
+                        android:text="Total Tasks"
+                        android:textColor="@color/text_muted"
+                        android:textSize="13sp" />
                     <TextView
                         android:id="@+id/tvCounter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0"
-                        android:textSize="28sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
-                        android:textColor="@color/primary" />
+                        android:textColor="@color/brand_primary" />
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                <Button
-                    android:id="@+id/btnRefresh"
-                    style="@style/ProfessionalButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:text="Refresh"
-                    android:backgroundTint="@color/primary_light"
-                    android:textColor="@color/text_on_primary" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+            <Button
+                android:id="@+id/btnRefresh"
+                style="@style/EnterpriseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sync"
+                android:backgroundTint="@color/brand_primary"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
 
-        <!-- Quick Actions -->
+        <!-- Primary Actions Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quick Actions"
-            android:textColor="@color/text_primary"
+            android:text="Management Actions"
+            android:textColor="@color/text_main"
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginBottom="16dp" />
 
         <Button
             android:id="@+id/btnAction"
-            style="@style/ProfessionalButton"
+            style="@style/EnterpriseButton"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Execute Production Task"
-            android:backgroundTint="@color/accent"
-            android:textColor="@color/text_on_primary"
+            android:layout_height="64dp"
+            android:text="Execute Production Cycle"
+            android:backgroundTint="@color/brand_accent"
+            android:textColor="#FFFFFF"
             android:layout_marginBottom="12dp" />
 
         <Button
             android:id="@+id/btnRequest"
-            style="@style/ProfessionalButton"
+            style="@style/EnterpriseButton"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Request Materials"
-            android:backgroundTint="@color/success"
-            android:textColor="@color/text_on_primary" />
+            android:layout_height="64dp"
+            android:text="Submit Warehouse Request"
+            android:backgroundTint="@color/brand_success"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 </LinearLayout>
