@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         tvCounter = findViewById(R.id.tvCounter);
         btnRefresh = findViewById(R.id.btnRefresh);
         btnAction = findViewById(R.id.btnAction);
+        btnRequest = findViewById(R.id.btnRequest);
         cardStatus = findViewById(R.id.cardStatus);
     }
 
