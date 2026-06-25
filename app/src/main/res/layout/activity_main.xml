@@ -4,122 +4,161 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#F5F6FA">
+    android:background="@color/bg_main">
 
-    <!-- En-tête -->
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Plant Floor Dashboard"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#2C3E50"
-        android:gravity="center"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Carte de statut -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
-        android:layout_marginBottom="20dp"
-        app:cardBackgroundColor="#7F8C8D">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Current Status"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:alpha="0.8" />
-
-            <TextView
-                android:id="@+id/tvStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Standby"
-                android:textColor="#FFFFFF"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>   <!-- ← هذه العلامة المغلقة كانت مفقودة -->
-
-    <!-- Horodatage -->
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="--"
-        android:textSize="16sp"
-        android:textColor="#34495E"
-        android:gravity="center"
-        android:layout_marginBottom="24dp" />
-
-    <!-- Compteur -->
+    <!-- Professional Header Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="32dp">
+        android:background="@color/primary"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:paddingBottom="48dp"
+        android:gravity="center">
 
         <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Actions: "
-            android:textSize="18sp"
-            android:textColor="#2C3E50" />
-
-        <TextView
-            android:id="@+id/tvCounter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="22sp"
+            android:text="Industrial Dashboard"
+            android:textSize="26sp"
             android:textStyle="bold"
-            android:textColor="#E67E22" />
+            android:textColor="@color/text_on_primary"
+            android:letterSpacing="0.01" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:textSize="14sp"
+            android:textColor="@color/text_on_primary"
+            android:alpha="0.7"
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 
-    <!-- Boutons -->
+    <!-- Main Content Area (shifted up to overlap header slightly) -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_marginTop="-24dp">
+
+        <!-- Status Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/bg_surface"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SYSTEM STATUS"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Standby"
+                    android:textColor="@color/primary"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Action Stats Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/bg_surface"
+            android:layout_marginBottom="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="24dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Operations"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/tvCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnRefresh"
+                    style="@style/ProfessionalButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Refresh"
+                    android:backgroundTint="@color/primary_light"
+                    android:textColor="@color/text_on_primary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Quick Actions -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quick Actions"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
 
         <Button
             android:id="@+id/btnAction"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_weight="1"
-            android:text="Perform Action"
-            android:textAllCaps="false"
-            android:backgroundTint="#3498DB"
-            android:textColor="#FFFFFF"
-            android:fontFamily="sans-serif-medium"
-            android:layout_marginEnd="12dp" />
+            style="@style/ProfessionalButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Execute Production Task"
+            android:backgroundTint="@color/accent"
+            android:textColor="@color/text_on_primary"
+            android:layout_marginBottom="12dp" />
 
         <Button
-            android:id="@+id/btnRefresh"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_weight="1"
-            android:text="Refresh"
-            android:textAllCaps="false"
-            android:backgroundTint="#95A5A6"
-            android:textColor="#FFFFFF"
-            android:fontFamily="sans-serif-medium" />
-    </LinearLayout>
+            android:id="@+id/btnRequest"
+            style="@style/ProfessionalButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Request Materials"
+            android:backgroundTint="@color/success"
+            android:textColor="@color/text_on_primary" />
 
+    </LinearLayout>
 </LinearLayout>

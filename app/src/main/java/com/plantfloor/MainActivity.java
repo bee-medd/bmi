@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
             updateStatus();
             Toast.makeText(this, "✅ Action performed", Toast.LENGTH_SHORT).show();
         });
+
+        btnRequest.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, RequestActivity.class));
+        });
     }
 
     private void updateDateTime() {
