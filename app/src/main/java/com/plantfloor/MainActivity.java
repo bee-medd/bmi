@@ -14,7 +14,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvTitle, tvDate, tvStatus, tvCounter;
-    private Button btnRefresh, btnAction;
+    private Button btnRefresh, btnAction, btnRequest;
     private CardView cardStatus;
     private int counter = 0;
 
@@ -72,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             tvStatus.setText("Production");
             cardStatus.setCardBackgroundColor(getColor(android.R.color.holo_green_light));
+        }
+    }
+}
+
         }
     }
 }
