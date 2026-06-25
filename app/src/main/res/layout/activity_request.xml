@@ -65,6 +65,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Department Code"
+                        android:text="DEP-PROD-01"
                         android:padding="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,6 +82,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Material Part Number"
+                        android:text="RAW-1001"
                         android:padding="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,8 +108,8 @@
                     style="@style/EnterpriseButton"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:text="Validate &amp; Submit"
-                    android:backgroundTint="@color/brand_accent"
+                    android:text="Submit Request"
+                    android:backgroundTint="@color/brand_success"
                     android:textColor="#FFFFFF" />
 
                 <Button
@@ -115,7 +117,7 @@
                     style="@style/EnterpriseButton"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:text="Discard"
+                    android:text="Cancel"
                     android:layout_marginTop="12dp"
                     android:backgroundTint="@color/brand_primary"
                     android:textColor="#FFFFFF" />
