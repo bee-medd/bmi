@@ -14,7 +14,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvTitle, tvDate, tvStatus, tvCounter;
+    private TextView tvDate, tvStatus, tvCounter;
     private Button btnRefresh, btnAction, btnRequest;
     private CardView cardStatus;
     private int counter = 0;
