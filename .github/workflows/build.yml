@@ -33,11 +33,11 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
         restore-keys: ${{ runner.os }}-gradle
 
-    - name: Build APK (Release)
-      run: gradle assembleRelease
+    - name: Build APK (Debug)
+      run: gradle assembleDebug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: plant-floor-app-release
+        name: plant-floor-app-debug
         path: app/build/outputs/apk/release/*.apk
