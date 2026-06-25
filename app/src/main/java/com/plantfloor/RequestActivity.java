@@ -60,13 +60,7 @@ public class RequestActivity extends AppCompatActivity {
     private void showConfirmationDialog(String dept, String mat, String qty) {
         new AlertDialog.Builder(this)
             .setTitle("Validate Request")
-            .setMessage("Request Details:
-
-Department: " + dept + "
-Material: " + mat + "
-Quantity: " + qty + "
-
-Confirm submission to Warehouse?")
+            .setMessage("Request Details:\\n\\nDepartment: " + dept + "\\nMaterial: " + mat + "\\nQuantity: " + qty + "\\n\\nConfirm submission to Warehouse?")
             .setPositiveButton("Confirm", (dialog, which) -> processSubmission())
             .setNegativeButton("Modify", (dialog, which) -> dialog.dismiss())
             .show();
@@ -87,10 +81,7 @@ Confirm submission to Warehouse?")
             
             new AlertDialog.Builder(this)
                 .setTitle("Request Submitted")
-                .setMessage("Your request has been successfully logged.
-
-Reference ID: " + requestId + "
-Status: Pending Approval")
+                .setMessage("Your request has been successfully logged.\\n\\nReference ID: " + requestId + "\\nStatus: Pending Approval")
                 .setPositiveButton("OK", (dialog, which) -> finish())
                 .show();
         }, 1500);
